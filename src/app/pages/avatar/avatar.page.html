@@ -1,0 +1,21 @@
+<app-header></app-header>
+
+<ion-content padding>
+
+  <ion-chip *ngFor="let avatar of [1,1,1,1,1]">
+    <ion-avatar >
+      <img src="/assets/lee.jpg" alt="texto alterno" >
+    </ion-avatar>
+    <ion-label>
+      Stan-lee
+    </ion-label>
+  </ion-chip>
+
+  <ion-list>
+    <ion-item *ngFor="let avatar of [1,1,1,1,1]">
+      <ion-avatar>
+        <img src="/assets/lee.jpg" alt="texto alterno" >
+      </ion-avatar>
+    </ion-item>
+  </ion-list>
+</ion-content>

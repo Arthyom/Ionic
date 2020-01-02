@@ -1,0 +1,38 @@
+<ion-header >
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" >
+      </ion-back-button>
+      <ion-button (click)="mostrarPopOver($event)">
+        <ion-icon slot="icon-only" name="contact"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-button  expand ="full" (click)="mostrarPopOver($event)">
+    Popover flotante
+  </ion-button>
+
+  <ion-item>
+    <ion-avatar slot="start">
+      <img src="/assets/lee.jpg"/>
+    </ion-avatar>
+    <ion-label>
+      Elemento {{elemento || 'Ninguno'}}
+    </ion-label>
+  </ion-item>
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="end">
+      <ion-button (click)="mostrarPopOver($event)">
+        <ion-icon slot="icon-only" name="contact"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

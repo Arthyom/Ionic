@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>modal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button expand="full" (click)="mostrarModal()"> Mostrar modal </ion-button>
+
+  <ion-item *ngIf="respuesta != null">
+    <ion-avatar slot="start">
+      <img src="/assets/lee.jpg"/>
+    </ion-avatar>
+    <ion-label>
+      {{respuesta}}
+    </ion-label>
+  </ion-item>
+</ion-content>

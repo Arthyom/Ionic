@@ -11,6 +11,10 @@
     {"nombre": "Grid", "icono": "apps", "ruta": "/grid"},
     {"nombre": "Infinite", "icono": "basket", "ruta": "/infite"},
     {"nombre": "ListSlide", "icono": "beaker", "ruta": "/list-slide"},
-    {"nombre": "Loading", "icono": "boat", "ruta": "/loading"}
+    {"nombre": "Loading", "icono": "boat", "ruta": "/loading"},
+    {"nombre": "PopOver", "icono": "tablet-portrait", "ruta": "/popover"},
+    {"nombre": "Modal", "icono": "phone-portrait", "ruta": "/modal"}
+
+
 
   ]

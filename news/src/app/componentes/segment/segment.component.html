@@ -1,0 +1,25 @@
+<ion-header>
+
+  <ion-toolbar color='dark' scrollable>
+
+    <ion-segment  (ionChange)="segmentChanged($event)" scrollable value='business' color='primary'>
+      <ion-segment-button ngFor="let categoria of categorias"
+      [value] = 'categoria'
+      *ngFor="let categoria of categorias"
+    >
+        <ion-label color='primary'>{{categoria}}</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  
+    
+    
+   
+
+  </ion-toolbar>
+
+
+
+
+  
+
+</ion-header>

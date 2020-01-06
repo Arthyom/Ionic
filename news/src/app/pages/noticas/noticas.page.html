@@ -1,0 +1,32 @@
+<ion-header>
+
+  <ion-toolbar color='dark' scrollable>
+
+    
+    <ion-segment  (ionChange)="segmentChanged($event)" scrollable value='general' color='primary'>
+      <ion-segment-button ngFor="let categoria of categorias"
+      [value] = 'categoria'
+      *ngFor="let categoria of categorias"
+    >
+        <ion-label color='primary'>{{categoria}}</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+   </ion-toolbar>
+
+</ion-header>
+ 
+
+<ion-content >
+
+  
+  <app-news [array_Noticias] = 'array_Noticias' ></app-news>
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+  
+</ion-content>

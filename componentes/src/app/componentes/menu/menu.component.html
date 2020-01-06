@@ -1,0 +1,21 @@
+<ion-menu side="start" menuId="m1" contentId="c1">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title> Menú Principal</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle *ngFor = " let item of menuItems | async">
+          <ion-item [routerLink] = "item.ruta"
+        > 
+          <ion-icon slot="start" [name]= "item.icono"></ion-icon>
+          <ion-label>
+            {{item.nombre}}
+          </ion-label>
+        </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+</ion-menu>

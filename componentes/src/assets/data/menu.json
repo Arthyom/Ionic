@@ -1,0 +1,16 @@
+[
+  {"nombre": "Nuevo", "icono": "grid", "ruta": "/alert"},
+    {"nombre": "Alert", "icono": "body", "ruta": "/alert"},
+    {"nombre": "Action", "icono": "archive", "ruta": "/action-sheet"},
+    {"nombre": "Buttons", "icono": "cart", "ruta": "/buttons"},
+    {"nombre": "Avatar", "icono": "baseball", "ruta": "/avatar"},
+    {"nombre": "Card", "icono": "card", "ruta": "/card"},
+    {"nombre": "Check", "icono": "checkmark", "ruta": "/check"},
+    {"nombre": "DateTime", "icono": "calendar", "ruta": "/calendar"},
+    {"nombre": "Fab", "icono": "aperture", "ruta": "/fab"},
+    {"nombre": "Grid", "icono": "apps", "ruta": "/grid"},
+    {"nombre": "Infinite", "icono": "basket", "ruta": "/infite"},
+    {"nombre": "ListSlide", "icono": "beaker", "ruta": "/list-slide"},
+    {"nombre": "Loading", "icono": "boat", "ruta": "/loading"}
+
+  ]

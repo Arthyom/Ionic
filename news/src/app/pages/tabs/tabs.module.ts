@@ -9,6 +9,8 @@ import { TabsPageRoutingModule } from './tabs-routing.module';
 import { TabsPage } from './tabs.page';
 import { NoticasPageModule } from '../noticas/noticas.module';
 import { ComponentesModule } from 'src/app/componentes/componentes/componentes.module';
+import { DestacadosPageModule } from '../destacados/destacados.module';
+import { FavoritosPageModule } from '../favoritos/favoritos.module';
 
 @NgModule({
   imports: [
@@ -17,7 +19,9 @@ import { ComponentesModule } from 'src/app/componentes/componentes/componentes.m
     IonicModule,
     TabsPageRoutingModule,
     NoticasPageModule,
-    ComponentesModule
+    ComponentesModule,
+    DestacadosPageModule,
+    FavoritosPageModule
   ],
   declarations: [TabsPage]
 })

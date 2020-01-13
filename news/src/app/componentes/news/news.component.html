@@ -5,9 +5,9 @@
     <ion-row > 
       <ion-col>
 
-        <ion-card (click)='onClick( noticia.url )' color='dark' *ngFor=" let noticia of array_Noticias; let i = index">  
+        <ion-card  color='dark' *ngFor=" let noticia of array_Noticias || async; let i = index">  
         
-          <app-new  [noticia]='noticia' [indice] = 'i'></app-new>
+          <app-new   [noticia]='noticia' [indice] = 'i'></app-new>
 
         </ion-card>
 

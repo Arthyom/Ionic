@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NoticiasService } from 'src/app/services/noticias.service';
+import { RemoveNewsService } from 'src/app/services/remove-news.service';
 
 
 @Component({
@@ -11,12 +12,22 @@ export class TabsPage implements OnInit {
 
 
 
-  constructor(  ) { }
+  constructor( private remover: RemoveNewsService ) { }
 
   ngOnInit(  ) {
     
    
   }
+
+  set(){
+    this.remover.setDeleter(false);
+  }
+
+  get(){
+    this.remover.setDeleter(true);
+  }
+  
+
 
   
 

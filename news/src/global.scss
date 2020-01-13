@@ -24,3 +24,18 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+.action-dark, .action-sheet-group {
+    background: var(--ion-color-dark) !important;
+    color: var(--ion-color-primary) !important;
+}
+
+.action-dark ion-icon {
+    
+    color: var(--ion-color-primary) !important;
+}
+
+
+.action-sheet-title {
+    color: var(--ion-color-primary) !important;
+}

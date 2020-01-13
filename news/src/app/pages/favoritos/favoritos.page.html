@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color='dark'>
+    <ion-title color='primary'> Favoritos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+
+
+  <ion-content>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content
+        pullingIcon="arrow-dropdown"
+        pullingText="Empuja para recargar"
+        refreshingSpinner="circles"
+        refreshingText="Recargando...">
+      </ion-refresher-content>
+    </ion-refresher>
+  
+
+  <app-news [borrar] = 'true' [array_Noticias] = 'array_Noticias' ></app-news>
+
+ 
+  </ion-content>
+  
+</ion-content>

@@ -6,11 +6,11 @@ import { IonInfiniteScroll, IonContent } from '@ionic/angular';
 
 
 @Component({
-  selector: 'app-noticas',
-  templateUrl: './noticas.page.html',
-  styleUrls: ['./noticas.page.scss'],
+  selector: 'app-destacados',
+  templateUrl: './destacados.page.html',
+  styleUrls: ['./destacados.page.scss'],
 })
-export class NoticasPage implements OnInit {
+export class DestacadosPage implements OnInit {
 
   @ViewChild(IonInfiniteScroll, {static: true}) infinite: IonInfiniteScroll;
   @ViewChild(IonContent, {static: true}) scroll: IonContent;

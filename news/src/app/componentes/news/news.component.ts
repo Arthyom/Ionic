@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Article } from 'src/app/interfaces/noticia';
-import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @Component({
   selector: 'app-news',
@@ -10,18 +9,15 @@ import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 export class NewsComponent implements OnInit {
 
   @Input() array_Noticias: Article[];
-  
+  @Input() borrar: boolean;
 
-  constructor( private browser: InAppBrowser ) { }
+  constructor(  ) { }
 
   ngOnInit() {
 
-    
+    console.log(this.borrar)
   }
 
-  onClick( url ) {
-    const instBrow = this.browser.create(url);
- 
-  }
+
 
 }

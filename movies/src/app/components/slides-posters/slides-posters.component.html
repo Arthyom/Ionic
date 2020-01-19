@@ -1,0 +1,22 @@
+
+<ion-grid>
+  <ion-row>
+    <ion-slides [options]='slidesOptions' >
+      <ion-slide  *ngFor="let pelicula of slidesMovies | pares">
+        <ion-card>
+          <img class="poster-img" [src]='pelicula.poster_path | images' />
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  </ion-row>
+
+  <ion-row>
+    <ion-slides [options]='slidesOptions' >
+      <ion-slide  *ngFor="let pelicula of slidesMovies | pares">
+        <ion-card>
+          <img class="poster-img" [src]='pelicula.poster_path | images' />
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  </ion-row>
+</ion-grid>

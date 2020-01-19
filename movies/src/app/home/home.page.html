@@ -1,18 +1,19 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+
 
 <ion-content>
 
+
   <app-slide-movies [slidesMovies]='Movies_recents'  
-                    [slidesOptions]='slidesOptions'>
+                    [slidesOptions]='slideOptions'>
 
   </app-slide-movies>
 
+  <h3>Cartelera</h3>                 
+  <app-slides-posters [slidesMovies]='Movies_recents'></app-slides-posters>
+
+  <h3>Polulares e Impopulares</h3>   
+  <app-slides-posters [slidesMovies]='Movies_Unpopular'></app-slides-posters>              
   <app-slides-posters [slidesMovies]='Movies_popular'></app-slides-posters>
+  
 
 </ion-content>

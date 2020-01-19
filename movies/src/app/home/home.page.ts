@@ -11,6 +11,7 @@ export class HomePage implements OnInit {
 
   Movies_recents: Peliculas[] = new Array();
   Movies_popular: Peliculas[] = new Array();
+  Movies_Unpopular: Peliculas[] = new Array();
 
   slideOptions = {
     freeMode: true,
@@ -22,14 +23,18 @@ export class HomePage implements OnInit {
 
 
   ngOnInit() {
-    this.movieColection.Movies_GetMovies(2019).subscribe( (data) =>{
+    this.movieColection.Movies_GetMovies(2020).subscribe( (data) =>{
       this.Movies_recents = data.results;
-      console.log(this.Movies_recents);
     });
 
-    this.movieColection.Movies_PopularFromCurrentYear().subscribe( (data) =>{
+    this.movieColection.Movies_PopularFromCurrentYear().subscribe( (data)=>{
       this.Movies_popular = data.results;
     });
+
+    this.movieColection.Movies_UnPopularFromCurrentYear().subscribe( (data)=>{
+      this.Movies_Unpopular = data.results;
+    });
+
 
 
   }

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  Movies_GeneralURL:  'https://api.themoviedb.org/3/discover/movie?api_key=9f7e4513aaf4d4ac2e012c440b706a3d&language=es-MX&primary_release_year=',
+  Movies_GeneralURL:  'https://api.themoviedb.org/3/discover/movie?api_key=9f7e4513aaf4d4ac2e012c440b706a3d&language=es-MX',
   Movies_ImagesURL: 'https://image.tmdb.org/t/p/'
 };
 

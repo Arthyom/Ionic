@@ -9,7 +9,9 @@ import { MoviesServicesService } from 'src/app/services/movies-services.service'
 })
 export class SlidesPostersComponent implements OnInit {
 
-  @Input()slidesMovies: Peliculas[] = new Array();
+  @Input()slidesMovies: Peliculas[];
+
+  @out
 
   slidesOptions = {
     freeMode: true,
@@ -18,14 +20,15 @@ export class SlidesPostersComponent implements OnInit {
 
 
   constructor( private movies: MoviesServicesService ) {
-    this.movies.Movies_PopularFromCurrentYear().subscribe( (data)=>{
 
-      this.slidesMovies = data.results;
-    });
    }
 
   ngOnInit() {
-    
+
+  }
+
+  cargarPeliculas(){
+
   }
 
 }

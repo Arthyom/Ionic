@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Peliculas } from 'src/app/interfaces/interfaces';
 import { MoviesServicesService } from 'src/app/services/movies-services.service';
 
@@ -11,7 +11,7 @@ export class SlidesPostersComponent implements OnInit {
 
   @Input()slidesMovies: Peliculas[];
 
-  @out
+  @Output()cargarPelicula = new EventEmitter();
 
   slidesOptions = {
     freeMode: true,
@@ -27,8 +27,9 @@ export class SlidesPostersComponent implements OnInit {
 
   }
 
-  cargarPeliculas(){
-
+  emitir(){
+    console.log('emitir');
+    this.cargarPelicula.emit();
   }
 
 }

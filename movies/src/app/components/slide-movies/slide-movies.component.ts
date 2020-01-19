@@ -9,7 +9,7 @@ import { Peliculas } from 'src/app/interfaces/interfaces';
 export class SlideMoviesComponent implements OnInit {
 
   @Input() slidesMovies: Peliculas[];
-  @Input() slidesOptions;
+  @Input()slidesOptions;
   constructor() { }
 
   ngOnInit() {}

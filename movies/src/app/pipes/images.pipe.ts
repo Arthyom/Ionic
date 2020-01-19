@@ -12,8 +12,6 @@ export class ImagesPipe implements PipeTransform {
     if ( !image ) {
       return './assets/no-image.jpg';
     }
-
-    console.log(Image_url);
     return `${environment.Movies_ImagesURL}${size}${image}`;
   }
 

@@ -3,17 +3,19 @@
 <ion-content>
 
 
-  <app-slide-movies [slidesMovies]='Movies_recents'  
-                    [slidesOptions]='slideOptions'>
+      <app-slide-movies [slidesMovies]='Movies_recents'  
+                      [slidesOptions]='slideOptions'>
+  
+      </app-slide-movies>
+  
+      <h3>Cartelera</h3>                 
+      <app-slides-posters (cargarPelicula)="Movies_LoadRecents()" [slidesMovies]='Movies_recents'></app-slides-posters>
+  
+      <h3>Polulares e Impopulares</h3>   
+      <app-slides-posters (cargarPelicula)="Movies_LoadUnpopulars()" [slidesMovies]='Movies_Unpopular'></app-slides-posters>              
+      <app-slides-posters (cargarPelicula)="Movies_LoadPopulars()" [slidesMovies]='Movies_popular'></app-slides-posters>
+   
 
-  </app-slide-movies>
-
-  <h3>Cartelera</h3>                 
-  <app-slides-posters (cargarPelicula)="Movies_LoadRecents()" [slidesMovies]='Movies_recents'></app-slides-posters>
-
-  <h3>Polulares e Impopulares</h3>   
-  <app-slides-posters (cargarPelicula)="Movies_LoadUnpopulars()" [slidesMovies]='Movies_Unpopular'></app-slides-posters>              
-  <app-slides-posters (cargarPelicula)="Movies_LoadPopulars()" [slidesMovies]='Movies_popular'></app-slides-posters>
   
 
 </ion-content>

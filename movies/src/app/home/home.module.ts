@@ -7,8 +7,10 @@ import { RouterModule } from '@angular/router';
 import { HomePage } from './home.page';
 import { PipesModule } from '../pipes/pipes.module';
 import { CompnentsModule } from '../components/compnents/compnents.module';
+import { MovieDetailsComponent } from '../components/movie-details/movie-details.component';
 
 @NgModule({
+  entryComponents: [MovieDetailsComponent],
   imports: [
     CommonModule,
     FormsModule,

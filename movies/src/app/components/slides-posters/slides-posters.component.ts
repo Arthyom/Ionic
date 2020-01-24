@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Peliculas } from 'src/app/interfaces/interfaces';
+import { Peliculas, PeliculaDetalles, Actors } from 'src/app/interfaces/interfaces';
 import { MoviesServicesService } from 'src/app/services/movies-services.service';
+import { ModalController } from '@ionic/angular';
+import { MovieDetailsComponent } from '../movie-details/movie-details.component';
 
 @Component({
   selector: 'app-slides-posters',
@@ -13,13 +15,17 @@ export class SlidesPostersComponent implements OnInit {
 
   @Output()cargarPelicula = new EventEmitter();
 
+  detallesMov: PeliculaDetalles = {};
+  detallesAct: Actors[] = [];
+
   slidesOptions = {
     freeMode: true,
     slidesPerView: 3.3
   };
 
 
-  constructor( private movies: MoviesServicesService ) {
+  constructor( private movies: MoviesServicesService,
+     private modal: ModalController ) {
 
    }
 
@@ -30,6 +36,21 @@ export class SlidesPostersComponent implements OnInit {
   emitir(){
     console.log('emitir');
     this.cargarPelicula.emit();
+  }
+
+  async Movies_Details(id: string) {
+
+
+    const md = await this.modal.create({
+      component: MovieDetailsComponent,
+      componentProps: {
+        id
+      }
+    });
+
+    md.present();
+
+
   }
 
 }

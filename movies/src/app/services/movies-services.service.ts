@@ -37,7 +37,28 @@ export class MoviesServicesService {
   Movies_UnPopularFromCurrentYear( querry: string ): Observable<Respuesta> {
     const year = new Date().getFullYear();
     const url = this.Movies_CreateQuerry(year, querry );
+    console.log('url ', url);
+
     return this.Movies_ExecuteQuerry(url);
+  }
+
+  Movies_ExecuteVoidQuerry(url: string): Observable<any>{
+    return this.movies.get(url);
+  }
+
+  Movies_Details( id: string ) {
+    const url = environment.Movies_DetailURL.replace( '{idmovie}', id);
+    return this.Movies_ExecuteVoidQuerry(url);
+  }
+
+  Movies_ActorsDetails( idActor: string ) {
+    const url = environment.Credits_DetailURL.replace( '{idmovie}', idActor);
+    return this.Movies_ExecuteVoidQuerry(url);
+  }
+
+  Movies_FindMovieByName( name: string ) {
+    const url = environment.Movies_FindURL.replace( '{movie}', name);
+    return this.Movies_ExecuteVoidQuerry(url);
   }
 
 

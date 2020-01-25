@@ -8,8 +8,10 @@ import { FavoritosPageRoutingModule } from './favoritos-routing.module';
 
 import { FavoritosPage } from './favoritos.page';
 import { CompnentsModule } from '../components/compnents/compnents.module';
+import { MovieDetailsComponent } from '../components/movie-details/movie-details.component';
 
 @NgModule({
+  entryComponents: [MovieDetailsComponent],
   imports: [
     CommonModule,
     FormsModule,

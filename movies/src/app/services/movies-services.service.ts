@@ -13,7 +13,6 @@ export class MoviesServicesService {
 
   Movies_GetMovies( year: number, querry: string='' ): Observable<Respuesta> {
     const url = this.Movies_CreateQuerry(year, querry);
-    console.log(url)
     return this.Movies_ExecuteQuerry(url);
 
   
@@ -31,13 +30,12 @@ export class MoviesServicesService {
   Movies_PopularFromCurrentYear( querry: string ): Observable<Respuesta> {
     const year = new Date().getFullYear();
     const url = this.Movies_CreateQuerry(year, querry );
-    return this.Movies_ExecuteQuerry(url);
+     return this.Movies_ExecuteQuerry(url);
   }
 
   Movies_UnPopularFromCurrentYear( querry: string ): Observable<Respuesta> {
     const year = new Date().getFullYear();
     const url = this.Movies_CreateQuerry(year, querry );
-    console.log('url ', url);
 
     return this.Movies_ExecuteQuerry(url);
   }
@@ -61,5 +59,8 @@ export class MoviesServicesService {
     return this.Movies_ExecuteVoidQuerry(url);
   }
 
+  Movies_Genres() {
+    return this.Movies_ExecuteVoidQuerry(environment.Movies_Genres);
+  }
 
 }

@@ -6,4 +6,24 @@
 
 <ion-content>
 
+
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content
+        pullingIcon="arrow-dropdown"
+        pullingText="Actualizar"
+        refreshingSpinner="circles"
+        refreshingText="Recargando...">
+      </ion-refresher-content>
+    </ion-refresher>
+
+
+  <ion-grid fixed>
+    <ion-row *ngFor="let genre of peliculasCategoria">
+      <ion-col size='12' *ngIf="genre.peliculas.length > 0 ">
+        <h3>{{genre.genero}}</h3>
+        <app-slides-posters [hideButton]='false' [slidesMovies]='genre.peliculas'></app-slides-posters>              
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
 </ion-content>

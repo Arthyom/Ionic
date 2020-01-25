@@ -12,7 +12,7 @@ import { MovieDetailsComponent } from '../movie-details/movie-details.component'
 export class SlidesPostersComponent implements OnInit {
 
   @Input()slidesMovies: Peliculas[];
-
+  @Input() hideButton = 'true';
   @Output()cargarPelicula = new EventEmitter();
 
   detallesMov: PeliculaDetalles = {};

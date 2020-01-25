@@ -25,7 +25,7 @@ export class BuscarPage implements OnInit {
 
       for (let i = 0; i < data.results.length; i++) {
         const element = data.results[i];
-        if ( element.title.length  <= 9 ) {
+        if ( element.title.length  <= 12 ) {
           this.peliculas_ideas.push(element);
         }
       }

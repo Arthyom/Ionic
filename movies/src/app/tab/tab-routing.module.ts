@@ -20,6 +20,13 @@ const routes: Routes = [
         loadChildren: () => import('../buscar/buscar.module').then( m => m.BuscarPageModule)
       },
 
+      {
+        path: 'favoritos',
+        loadChildren: () => import('../favoritos/favoritos.module').then( m => m.FavoritosPageModule)
+      }
+
+    
+
     ]
   }
 ];

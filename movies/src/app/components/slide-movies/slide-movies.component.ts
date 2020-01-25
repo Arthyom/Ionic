@@ -11,6 +11,7 @@ export class SlideMoviesComponent implements OnInit {
 
   @Input() slidesMovies: Peliculas[];
   @Input()slidesOptions;
+  
 
   constructor( private movies: MoviesServicesService) { }
 

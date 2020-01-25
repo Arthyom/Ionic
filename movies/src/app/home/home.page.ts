@@ -31,11 +31,14 @@ export class HomePage implements OnInit {
     });
 
     this.movieColection.Movies_PopularFromCurrentYear( '&sort_by=popularity.des' ).subscribe( (data)=>{
-      this.Movies_popular = data.results;
+      this.Movies_popular = data.results.filter(e=>e);
+      console.log('popop', this.Movies_popular)
     });
 
     this.movieColection.Movies_UnPopularFromCurrentYear( '&sort_by=popularity.asc').subscribe( (data)=>{
-      this.Movies_Unpopular = data.results;
+      let k = data.results.filter( e => e );
+      this.Movies_Unpopular = data.results.filter( e=>e );
+      console.log('unununun', this.Movies_Unpopular)
     });
 
 

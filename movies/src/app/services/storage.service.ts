@@ -30,13 +30,19 @@ export class StorageService {
     return l;
   }
 
-  Storage_GetMovies ( ): Promise<PeliculaDetalles[]>{
-    return this.storage.get('peliculas');
+  Storage_GetMovies ( ): Promise<PeliculaDetalles[]> {
+    return this.storage.get('peliculas').then( (data: PeliculaDetalles[]) =>{
+      if(data != null)
+        return data;
+      else
+        return [];
+    });
   }
 
   async Storage_FindMovie( movie: PeliculaDetalles ) {
-    
+
     const l: PeliculaDetalles [] = await this.Storage_GetMovies();
+
     for (let i = 0; i < l.length; i++) {
       const element = l[i];
 

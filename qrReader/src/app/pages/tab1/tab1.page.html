@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color='primary'>
+    <ion-title >
+      Scanear
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-slides [options]='opciones'  >
+    <ion-slide>
+      <ion-button shape='round' expand='full'
+                  size='large'fill='outline'
+                  (click)="escanear()"
+      >
+                  Escanear
+      </ion-button>
+
+      <ion-label>{{textoEscaneo}}</ion-label>
+
+    </ion-slide>
+  </ion-slides>
+
+</ion-content>

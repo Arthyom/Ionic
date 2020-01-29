@@ -24,7 +24,7 @@ export class Tab2Page {
   }
 
   enviar() {
-    this.Str_Reg.Registro_FormatearCSV();
+    this.Str_Reg.Registro_EnviarEmail('r.csv');
   }
 
 }

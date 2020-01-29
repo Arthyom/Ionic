@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RegistrosService } from '../../services/registros.service';
 
 @Component({
   selector: 'app-tabs',
@@ -7,6 +8,13 @@ import { Component } from '@angular/core';
 })
 export class TabsPage {
 
-  constructor() {}
+  constructor( private servicio: RegistrosService ) {}
+
+
+  enviarCorero() {
+
+    this.servicio.Registro_EnviarEmail('r.csv');
+
+  }
 
 }

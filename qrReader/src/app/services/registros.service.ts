@@ -14,6 +14,7 @@ import { File } from '@ionic-native/file/ngx';
 export class RegistrosService {
 
   Lecturas: Registros [] = [];
+  lineas: string[] = [];
 
 
   constructor( private storage: Storage,
@@ -76,42 +77,48 @@ export class RegistrosService {
     this.Lecturas.forEach( lectura => {
       const linea = `${lectura.frmt}, ${lectura.type}, ${lectura.date}, ${lectura.text.replace(',', ' ')} \n`;
       temp.push(linea);
+      this.lineas = temp;
     });
-
-    console.log('fomato', temp);
-
-
   }
 
-  Registro_CrearArchivo( texto: string) {
+  Registro_CrearArchivo( archivoNombre: string) {
 
-    this.archivo.checkDir( this.archivo.dataDirectory, 'r.csv' )
+    this.archivo.checkDir( this.archivo.dataDirectory, archivoNombre )
     .then( existe => {
-      this.Registro_EscribirArchivo( texto );
+
+      console.log('creado archivo');
+      this.Registro_EscribirArchivo( archivoNombre );
 
     })
     .catch( err => {
       this.archivo.createFile(this.archivo.dataDirectory,
-        'r.csv',false);
-        this.Registro_EscribirArchivo(texto);
+       archivoNombre, false);
+       console.log('creando y ya creado archivo');
+      this.Registro_EscribirArchivo( archivoNombre );
     });
 
   }
 
-  async Registro_EscribirArchivo( texto: string ) {
-
-    await this.archivo.writeExistingFile( this.archivo.dataDirectory, 'r.csv',
-    texto
-  );
+  async Registro_EscribirArchivo( nombreArchivo: string ) {
+    this.lineas.forEach( linea => {
+      console.log('escribiendo', linea)
+      this.archivo.writeExistingFile( this.archivo.dataDirectory, 
+      nombreArchivo, linea);
+    });
   }
 
   Registro_EnviarEmail( nombreArchivoContenido: string ) {
+
+    this.Registro_FormatearCSV();
+    this.Registro_CrearArchivo( nombreArchivoContenido );
+    const dir = `${this.archivo.dataDirectory}/${nombreArchivoContenido}`;
+
     let email = {
-      attachments: [nombreArchivoContenido],
+      attachments: [dir],
 
       subject: 'Escaneos en CSV',
       body: 'Escaneos'
-    }
+    };
 
     this.email.open(email);
   }
